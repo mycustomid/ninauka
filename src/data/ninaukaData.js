@@ -14,7 +14,8 @@ export const BRAND = {
   instagramUrl: "https://www.instagram.com/ninauka_n2k/",
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Ninauka+BSD+City+Tangerang+Selatan",
   heroImage: "/images/story/hero-cover.jpg",
-  logo: "/brand/ninauka-logo-clean.png",
+  logo: "/brand/ninauka-logo-light.png",
+  logoDark: "/brand/ninauka-logo-clean.png",
   favicon: "/brand/ninauka-favicon.png"
 };
 
