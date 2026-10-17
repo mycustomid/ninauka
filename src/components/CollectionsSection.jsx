@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CATEGORIES, PRODUCTS, BRAND } from '../data/ninaukaData';
 import ProductDetailModal from './ProductDetailModal';
-import { Sparkles, Eye, MessageCircle, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { Eye, MessageCircle, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 export default function CollectionsSection() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -20,20 +20,20 @@ export default function CollectionsSection() {
             <div className="flex items-center gap-3">
               <span className="w-8 h-[1px] bg-[#c5a880]" />
               <span className="text-xs uppercase tracking-[0.25em] text-[#c5a880] font-cinzel">
-                Haute Collections
+                Koleksi Adibusana
               </span>
             </div>
             <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-light text-[#fbf8f5]">
-              Curated Masterpieces.
+              Mahakarya Terkurasi.
             </h2>
             <p className="text-sm text-[#a39e93] font-light max-w-xl">
-              From signature reticulated python Kelly handbags to Dayak Doyo botanical weaving, each creation is an individually numbered testament to Indonesian haute couture.
+              Mulai dari siluet ikonik Kelly berbalut kulit piton retikulasi hingga tenun botani Ulap Doyo Kalimantan dan Gedogan Baduy, setiap karya dibuat terbatas sebagai persembahan kriya luhur Indonesia.
             </p>
           </div>
 
           <div className="text-right hidden md:block">
             <span className="text-xs text-[#c5a880] tracking-widest uppercase font-cinzel">
-              Showing {filteredProducts.length} Creations
+              Menampilkan {filteredProducts.length} Karya
             </span>
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function CollectionsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => {
             const waQuickMsg = encodeURIComponent(
-              `Halo Ninauka, saya tertarik dengan ${product.title} (Kode: ${product.code}). Mohon info ketersediaan dan harga.`
+              `Halo Ninauka Atelier, saya tertarik dengan ${product.title} (Kode: ${product.code}). Mohon informasi ketersediaan dan harga resmi.`
             );
 
             return (
@@ -94,14 +94,14 @@ export default function CollectionsSection() {
                       className="flex-1 py-2.5 rounded-xl bg-[#0e0e0d]/90 backdrop-blur-md text-[#fbf8f5] hover:text-[#c5a880] border border-white/20 text-xs font-medium tracking-wider uppercase flex items-center justify-center gap-2 transition-colors"
                     >
                       <Eye className="w-3.5 h-3.5" />
-                      <span>Inspect Piece</span>
+                      <span>Lihat Detail Karya</span>
                     </button>
                     <a
                       href={`https://wa.me/${BRAND.whatsappNumber}?text=${waQuickMsg}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2.5 rounded-xl bg-[#c5a880] text-[#0e0e0d] hover:bg-[#d8c19f] transition-colors"
-                      title="Direct Concierge Inquiry"
+                      title="Konsultasi Langsung via WhatsApp"
                     >
                       <MessageCircle className="w-4 h-4" />
                     </a>
@@ -136,7 +136,7 @@ export default function CollectionsSection() {
                       onClick={() => setInspectingProduct(product)}
                       className="text-[#c5a880] hover:text-white text-xs font-medium tracking-wider uppercase flex items-center gap-1"
                     >
-                      <span>Details</span>
+                      <span>Lihat Detail Karya</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </button>
                   </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CRAFTSMANSHIP_CHAPTERS } from '../data/ninaukaData';
-import { Sparkles, ArrowRight, ShieldCheck, Leaf, Compass, Feather } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Leaf, Feather } from 'lucide-react';
 
 export default function CraftsmanshipDossier() {
   const [activeChapterIdx, setActiveChapterIdx] = useState(0);
@@ -15,13 +15,13 @@ export default function CraftsmanshipDossier() {
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#181716] border border-[#c5a880]/25 text-xs text-[#c5a880] tracking-[0.25em] uppercase font-cinzel">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Savoir-Faire Dossier</span>
+            <span>Ensiklopedia Savoir-Faire</span>
           </div>
           <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-light text-[#fbf8f5]">
-            Ancestral Fiber &amp; Haute Maroquinerie.
+            Serat Pusaka &amp; Adibusana Kulit.
           </h2>
           <p className="text-sm text-[#a39e93] font-light leading-relaxed">
-            Every Ninauka handbag honors the unhurried patience of Indonesian tribal masters—uniting jungle-harvested fibers and sacred textiles with modern luxury finishing.
+            Setiap tas tangan Ninauka menghormati kesabaran para empu tenun dan perajin kulit Nusantara—menyatukan serat hutan Kalimantan, Tenun Baduy Kanekes, Tenun Inuh Lampung, serta Ecoprint dengan konstruksi kulit berstandar internasional.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export default function CraftsmanshipDossier() {
               >
                 <div className="flex items-center justify-between w-full mb-3">
                   <span className={`text-xs font-mono font-bold ${isActive ? 'text-[#c5a880]' : 'text-[#8e8980]'}`}>
-                    CHAPTER {chap.number}
+                    BAB {chap.number}
                   </span>
                   <Icon className={`w-4 h-4 ${isActive ? 'text-[#c5a880]' : 'text-[#8e8980]'}`} />
                 </div>
@@ -69,7 +69,7 @@ export default function CraftsmanshipDossier() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4">
                   <span className="text-[10px] uppercase tracking-wider text-[#c5a880] font-cinzel">
-                    Primary Sourcing
+                    Hulu Material Alami
                   </span>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function CraftsmanshipDossier() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4">
                   <span className="text-[10px] uppercase tracking-wider text-[#c5a880] font-cinzel">
-                    Artisanal Execution
+                    Eksekusi Kriya Tangan
                   </span>
                 </div>
               </div>
@@ -92,10 +92,10 @@ export default function CraftsmanshipDossier() {
             <div className="lg:col-span-6 space-y-6">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono font-bold text-[#c5a880] px-2.5 py-1 rounded bg-[#c5a880]/10 border border-[#c5a880]/30">
-                  DOSSIER CHAPTER {chapter.number}
+                  DOSSIER BAB {chapter.number}
                 </span>
                 <span className="text-xs uppercase tracking-widest text-[#8e8980]">
-                  Authentic Origin
+                  Keaslian Terverifikasi
                 </span>
               </div>
 
@@ -116,7 +116,7 @@ export default function CraftsmanshipDossier() {
                   href="#collections"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#c5a880] text-[#0e0e0d] font-semibold text-xs tracking-wider uppercase transition-all hover:bg-[#d8c19f]"
                 >
-                  <span>View Collections in this Material</span>
+                  <span>Lihat Koleksi Berbahan Ini</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>

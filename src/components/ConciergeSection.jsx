@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BRAND } from '../data/ninaukaData';
-import { MessageCircle, Mail, MapPin, Phone, Send, Sparkles, Clock } from 'lucide-react';
+import { MessageCircle, Mail, MapPin } from 'lucide-react';
 
 function InstagramIcon({ className = "w-5 h-5" }) {
   return (
@@ -16,7 +16,7 @@ export default function ConciergeSection() {
   const [form, setForm] = useState({
     name: '',
     organization: '',
-    interest: 'Excellence Python Collection (Kelly / Minaudière)',
+    interest: 'Koleksi Kulit Piton Excellence (Kelly KE.01 / KC.02)',
     notes: ''
   });
 
@@ -24,12 +24,12 @@ export default function ConciergeSection() {
     e.preventDefault();
     const text = encodeURIComponent(
       `Halo Ninauka Atelier,\n\n` +
-      `Saya ingin mengajukan konsultasi / pemesanan koleksi haute maroquinerie:\n\n` +
+      `Saya ingin mengajukan konsultasi / pemesanan koleksi adibusana Ninauka:\n\n` +
       `• Nama Klien: ${form.name || '-'}\n` +
       `• Instansi / Butik: ${form.organization || '-'}\n` +
       `• Peminatan Koleksi: ${form.interest}\n` +
       `• Catatan / Permintaan Khusus: ${form.notes || '-'}\n\n` +
-      `Mohon dihubungkan dengan kurator atau Tim Ninauka. Terima kasih.`
+      `Mohon dihubungkan dengan Ibu Titik Kurniasih atau Tim Kurator Ninauka. Terima kasih.`
     );
     window.open(`https://wa.me/${BRAND.whatsappNumber}?text=${text}`, '_blank');
   };
@@ -44,14 +44,14 @@ export default function ConciergeSection() {
               <div className="flex items-center gap-3">
                 <span className="w-8 h-[1px] bg-[#c5a880]" />
                 <span className="text-xs uppercase tracking-[0.25em] text-[#c5a880] font-cinzel">
-                  Private Consultation
+                  Konsultasi Privat
                 </span>
               </div>
               <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-light text-[#fbf8f5]">
-                Direct Atelier Concierge.
+                Concierge Atelier Langsung.
               </h2>
               <p className="text-sm text-[#a39e93] font-light leading-relaxed">
-                Connect directly with Titik Kurniasih and our master leather artisans for private viewings, bespoke dimensions, or international boutique distribution.
+                Terhubung langsung dengan Ibu Titik Kurniasih dan maestro perajin kulit kami di Nusaloka, BSD City untuk kunjungan galeri privat, pesanan khusus (<em>bespoke</em>), pengadaan PaDi UMKM, maupun distribusi butik internasional.
               </p>
             </div>
 
@@ -71,7 +71,7 @@ export default function ConciergeSection() {
                   <div className="text-sm font-semibold text-[#fbf8f5] group-hover:text-[#c5a880] transition-colors">
                     {BRAND.phone}
                   </div>
-                  <span className="text-[11px] text-emerald-400/80">Available Mon – Sat (09:00 – 18:00 WIB)</span>
+                  <span className="text-[11px] text-emerald-400/80">Melayani Senin – Sabtu (09.00 – 18.00 WIB)</span>
                 </div>
               </a>
 
@@ -83,11 +83,11 @@ export default function ConciergeSection() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-[#8e8980]">Official Inquiries</span>
+                  <span className="text-[10px] uppercase tracking-wider text-[#8e8980]">Korespondensi Resmi</span>
                   <div className="text-sm font-semibold text-[#fbf8f5] group-hover:text-[#c5a880] transition-colors">
                     {BRAND.email}
                   </div>
-                  <span className="text-[11px] text-[#8e8980]">Boutique wholesale &amp; export inquiries</span>
+                  <span className="text-[11px] text-[#8e8980]">Kemitraan butik, PaDi UMKM &amp; permintaan ekspor</span>
                 </div>
               </a>
 
@@ -101,11 +101,11 @@ export default function ConciergeSection() {
                   <InstagramIcon className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-[#8e8980]">Instagram Lookbook</span>
+                  <span className="text-[10px] uppercase tracking-wider text-[#8e8980]">Jurnal Visual Instagram</span>
                   <div className="text-sm font-semibold text-[#fbf8f5] group-hover:text-[#c5a880] transition-colors">
                     {BRAND.instagram}
                   </div>
-                  <span className="text-[11px] text-[#8e8980]">Daily atelier updates &amp; new releases</span>
+                  <span className="text-[11px] text-[#8e8980]">Kabar terbaru atelier, pameran &amp; rilis koleksi</span>
                 </div>
               </a>
 
@@ -113,7 +113,7 @@ export default function ConciergeSection() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-[#c5a880] shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider text-[#8e8980]">Private Atelier Location</span>
+                    <span className="text-[10px] uppercase tracking-wider text-[#8e8980]">Alamat Atelier Privat</span>
                     <p className="text-xs text-[#e8e4dc] mt-0.5 leading-relaxed">
                       {BRAND.address}
                     </p>
@@ -123,7 +123,7 @@ export default function ConciergeSection() {
                       rel="noopener noreferrer"
                       className="inline-block mt-2 text-[11px] text-[#c5a880] hover:underline uppercase tracking-wider font-semibold"
                     >
-                      Open Google Maps →
+                      Buka di Google Maps →
                     </a>
                   </div>
                 </div>
@@ -138,69 +138,69 @@ export default function ConciergeSection() {
 
               <div className="mb-6 space-y-1">
                 <span className="text-xs uppercase tracking-widest text-[#c5a880] font-cinzel">
-                  Inquiry Dossier
+                  Formulir Peminatan Karya
                 </span>
                 <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#fbf8f5]">
-                  Initiate a Private Commission
+                  Mulai Konsultasi &amp; Pesanan Khusus
                 </h3>
               </div>
 
               <form onSubmit={handleSubmitWhatsApp} className="space-y-5">
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-[#8e8980] mb-2">
-                    Client Name *
+                    Nama Lengkap Klien *
                   </label>
                   <input
                     type="text"
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="e.g. Lady Vivienne / Mr. Alexander"
+                    placeholder="Contoh: Ibu Kartika Wijaya / Bapak Hendra Kusuma"
                     className="w-full px-4 py-3 rounded-xl bg-[#0e0e0d] border border-white/10 text-sm text-[#fbf8f5] focus:outline-none focus:border-[#c5a880] transition-colors"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-[#8e8980] mb-2">
-                    Boutique / Organization (Optional)
+                    Instansi / Butik / Kolektor Privat (Opsional)
                   </label>
                   <input
                     type="text"
                     value={form.organization}
                     onChange={(e) => setForm({ ...form, organization: e.target.value })}
-                    placeholder="e.g. Luxury Department Store / Private Family Office"
+                    placeholder="Contoh: Kolektor Pribadi / Kementerian / Galeri Mode"
                     className="w-full px-4 py-3 rounded-xl bg-[#0e0e0d] border border-white/10 text-sm text-[#fbf8f5] focus:outline-none focus:border-[#c5a880] transition-colors"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-[#8e8980] mb-2">
-                    Collection of Interest *
+                    Koleksi yang Diminati *
                   </label>
                   <select
                     value={form.interest}
                     onChange={(e) => setForm({ ...form, interest: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-[#0e0e0d] border border-white/10 text-sm text-[#fbf8f5] focus:outline-none focus:border-[#c5a880] transition-colors"
                   >
-                    <option value="Excellence Python Collection (Kelly KE.01 / KC.02)">Excellence Python Collection (Kelly KE.01 / KC.02)</option>
-                    <option value="Python Minaudière Evening Clutch (MA.03 / MA.05)">Python Minaudière Evening Clutch (MA.03 / MA.05)</option>
-                    <option value="East Kalimantan Doyo Leaf Fiber Weaving">East Kalimantan Doyo Leaf Fiber Weaving</option>
-                    <option value="Ancient Tenun Baduy Gedogan Handwoven Handbags">Ancient Tenun Baduy Gedogan Handwoven Handbags</option>
-                    <option value="Eco-Luxe Goni (Burlap) & Fine Cowhide Totes">Eco-Luxe Goni (Burlap) &amp; Fine Cowhide Totes</option>
-                    <option value="VIP Corporate Hampers & Bespoke Monogramming">VIP Corporate Hampers &amp; Bespoke Monogramming</option>
-                    <option value="International Wholesale & Private Label Orders">International Wholesale &amp; Private Label Orders</option>
+                    <option value="Koleksi Kulit Piton Excellence (Kelly KE.01 / KC.02)">Koleksi Kulit Piton Excellence (Kelly KE.01 / KC.02)</option>
+                    <option value="Minaudière Evening Clutch Piton (MA.03 / MA.05)">Minaudière Evening Clutch Piton (MA.03 / MA.05)</option>
+                    <option value="Koleksi Tenun Serat Daun Ulap Doyo Kalimantan Timur">Koleksi Tenun Serat Daun Ulap Doyo Kalimantan Timur</option>
+                    <option value="Koleksi Tenun Baduy Gedogan & Tenun Inuh Lampung">Koleksi Tenun Baduy Gedogan &amp; Tenun Inuh Lampung</option>
+                    <option value="Koleksi Eco-Luxe Goni, Ecoprint & Kulit Sapi">Koleksi Eco-Luxe Goni, Ecoprint &amp; Kulit Sapi</option>
+                    <option value="Hampers VIP Korporat, Monogram & Pengadaan PaDi UMKM">Hampers VIP Korporat, Monogram &amp; Pengadaan PaDi UMKM</option>
+                    <option value="Kemitraan Ekspor Internasional & Private Label">Kemitraan Ekspor Internasional &amp; Private Label</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-[#8e8980] mb-2">
-                    Bespoke Requests &amp; Notes
+                    Catatan Khusus &amp; Rincian Kustomisasi
                   </label>
                   <textarea
                     rows={3}
                     value={form.notes}
                     onChange={(e) => setForm({ ...form, notes: e.target.value })}
-                    placeholder="Tell us about custom leather colors, hardware finishes, monogram initials, or requested delivery timeline..."
+                    placeholder="Tuliskan preferensi warna kulit, jenis wastra, inisial monogram emas, jumlah pesanan, atau jadwal pengiriman yang diharapkan..."
                     className="w-full px-4 py-3 rounded-xl bg-[#0e0e0d] border border-white/10 text-sm text-[#fbf8f5] focus:outline-none focus:border-[#c5a880] transition-colors"
                   />
                 </div>
@@ -211,10 +211,10 @@ export default function ConciergeSection() {
                     className="w-full py-4 rounded-full bg-[#c5a880] text-[#0e0e0d] font-semibold text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-[#d8c19f] hover:shadow-[0_0_25px_rgba(197,168,128,0.35)] flex items-center justify-center gap-2"
                   >
                     <MessageCircle className="w-4 h-4" />
-                    <span>Dispatch via WhatsApp Concierge</span>
+                    <span>Kirim Konsultasi via WhatsApp Concierge</span>
                   </button>
                   <p className="text-center text-[10px] text-[#8e8980] mt-3">
-                    Fast response guaranteed. All communications remain strictly confidential.
+                    Respons cepat dan personal langsung dari kurator Atelier Ninauka. Seluruh data klien dijaga kerahasiaannya.
                   </p>
                 </div>
               </form>

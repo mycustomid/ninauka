@@ -1,6 +1,6 @@
 import React from 'react';
 import { BRAND } from '../data/ninaukaData';
-import { ArrowUp, MessageCircle, Mail, MapPin, ShieldCheck, Heart } from 'lucide-react';
+import { ArrowUp, ShieldCheck } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -21,22 +21,22 @@ export default function Footer() {
               />
               <div className="border-l border-[#c5a880]/30 pl-3">
                 <span className="block text-[10px] tracking-[0.25em] uppercase text-[#c5a880] font-medium">
-                  BSD City Atelier
+                  Atelier Nusaloka BSD
                 </span>
                 <span className="block text-[9px] tracking-wider text-[#8e8980]">
-                  Haute Maroquinerie
+                  Kulit Eksotis &amp; Wastra Nusantara
                 </span>
               </div>
             </div>
 
             <p className="text-xs text-[#8e8980] font-light leading-relaxed max-w-sm">
-              Artisan luxury handbags and evening clutches blending certified exotic python skin with indigenous Dayak Doyo leaf weaving and ancient Tenun Baduy gedogan textiles. Handcrafted in Tangerang Selatan, Indonesia.
+              Rumah kriya tas tangan mewah dan <em>evening clutch</em> yang memadukan kulit ular piton bersertifikat CITES serta kulit sapi samak nabati dengan tenun serat daun Ulap Doyo Dayak Benuag, Tenun Baduy Gedogan, Tenun Inuh Lampung, dan Ecoprint. Dirancang di Nusaloka BSD City, Tangerang Selatan.
             </p>
 
             <div className="flex items-center gap-2 text-xs text-[#c5a880]">
-              <ShieldCheck className="w-4 h-4" />
+              <ShieldCheck className="w-4 h-4 shrink-0" />
               <span className="font-cinzel tracking-wider text-[11px]">
-                Trade Expo Indonesia (TEI 2026) Official Exhibitor
+                Kurasi Resmi TEI 2026 · INACRAFT · KriyaNusa · PaDi UMKM
               </span>
             </div>
           </div>
@@ -44,35 +44,35 @@ export default function Footer() {
           {/* Quick Nav */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="text-xs uppercase tracking-[0.2em] text-[#fbf8f5] font-cinzel">
-              Maison
+              Navigasi
             </h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="#collections" className="hover:text-[#c5a880] transition-colors">Haute Collections</a></li>
-              <li><a href="#manifesto" className="hover:text-[#c5a880] transition-colors">The Atelier</a></li>
-              <li><a href="#craftsmanship" className="hover:text-[#c5a880] transition-colors">Savoir-Faire</a></li>
-              <li><a href="#bespoke" className="hover:text-[#c5a880] transition-colors">VIP Packaging</a></li>
-              <li><a href="#atelier-specs" className="hover:text-[#c5a880] transition-colors">Export Dossier</a></li>
+              <li><a href="#collections" className="hover:text-[#c5a880] transition-colors">Koleksi Utama</a></li>
+              <li><a href="#manifesto" className="hover:text-[#c5a880] transition-colors">Kisah Atelier</a></li>
+              <li><a href="#craftsmanship" className="hover:text-[#c5a880] transition-colors">Mahakarya Wastra</a></li>
+              <li><a href="#bespoke" className="hover:text-[#c5a880] transition-colors">Kemasan VIP</a></li>
+              <li><a href="#atelier-specs" className="hover:text-[#c5a880] transition-colors">Dossier Ekspor</a></li>
             </ul>
           </div>
 
           {/* Sourcing & Ethics */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="text-xs uppercase tracking-[0.2em] text-[#fbf8f5] font-cinzel">
-              Heritage
+              Warisan Material
             </h4>
             <ul className="space-y-2 text-xs">
-              <li><span className="text-[#e8e4dc]">CITES Python Hide</span></li>
+              <li><span className="text-[#e8e4dc]">Kulit Piton CITES</span></li>
               <li><span className="text-[#e8e4dc]">Tenun Baduy Gedogan</span></li>
-              <li><span className="text-[#e8e4dc]">Dayak Doyo Wild Leaf</span></li>
-              <li><span className="text-[#e8e4dc]">Eco-Luxe Goni Burlap</span></li>
-              <li><span className="text-[#e8e4dc]">Botanical Plant Dyes</span></li>
+              <li><span className="text-[#e8e4dc]">Serat Daun Ulap Doyo</span></li>
+              <li><span className="text-[#e8e4dc]">Tenun Inuh &amp; Ecoprint</span></li>
+              <li><span className="text-[#e8e4dc]">Goni &amp; Serat Alam</span></li>
             </ul>
           </div>
 
           {/* Atelier Contact */}
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs uppercase tracking-[0.2em] text-[#fbf8f5] font-cinzel">
-              Contact &amp; Atelier
+              Kontak &amp; Atelier
             </h4>
             <p className="text-xs text-[#8e8980] leading-relaxed">
               {BRAND.address}
@@ -88,7 +88,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#736e66]">
           <div>
-            &copy; {new Date().getFullYear()} NINAUKA by Titik Kurniasih. All rights reserved.
+            &copy; {new Date().getFullYear()} NINAUKA oleh Titik Kurniasih. Hak cipta dilindungi undang-undang.
           </div>
 
           <div className="flex items-center gap-6">
@@ -112,7 +112,7 @@ export default function Footer() {
               onClick={scrollToTop}
               className="flex items-center gap-1.5 text-[#c5a880] hover:text-white transition-colors"
             >
-              <span>Back to Top</span>
+              <span>Kembali ke Atas</span>
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
           </div>

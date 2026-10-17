@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
 import { BRAND, STATS } from '../data/ninaukaData';
-import { ArrowDownRight, Sparkles, ShieldCheck, Feather, Compass, Eye } from 'lucide-react';
+import { ArrowDownRight, Sparkles, ShieldCheck, Feather, Compass } from 'lucide-react';
 
 export default function Hero({ onSelectProduct }) {
   const featuredPieces = [
     {
       code: "KE.01",
-      name: "Kelly Bag Python",
-      category: "Certified Exotic Python Hide",
+      name: "Excellence Kelly Bag Python",
+      category: "Kulit Piton Eksotis Bersertifikat CITES",
       dim: "26 x 7 x 15 cm",
       image: "/images/products/kelly-ke01-front.jpg",
-      note: "Haute Flagship · Gold Turnlock & Clochette"
+      note: "Mahakarya Utama · Kunci Putar & Clochette Berlapis Emas"
     },
     {
       code: "MA.03",
-      name: "Python Minaudière",
-      category: "Evening Red Carpet Edition",
+      name: "Python Minaudière Clutch",
+      category: "Edisi Malam & Karpet Merah",
       dim: "16 x 5 x 9 cm",
       image: "/images/products/minaudiere-ma03-hero.jpg",
-      note: "Rigid Jewel Frame · Ornate Clasp"
+      note: "Rangka Permata Kaku · Pengait Kisslock Berukir"
     },
     {
       code: "DE.01",
-      name: "Doyo Weaving Envelope",
-      category: "Dayak Benuag Wild Fiber",
+      name: "Tas Amplop Tenun Ulap Doyo",
+      category: "Serat Daun Doyo Liar Dayak Benuag",
       dim: "28 x 6 x 18 cm",
       image: "/images/products/doyo-envelope-front.jpg",
-      note: "Botanical Dyes · Python Leather Flap"
+      note: "Pewarna Nabati Hutan · Penutup Kulit Piton Asli"
     }
   ];
 
@@ -44,13 +44,13 @@ export default function Hero({ onSelectProduct }) {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full my-auto">
         {/* Top Eyebrow Tag */}
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex flex-wrap items-center gap-3 mb-6">
           <span className="w-8 h-[1px] bg-[#c5a880]" />
           <span className="text-xs tracking-[0.3em] uppercase text-[#c5a880] font-medium font-cinzel">
-            Maison de Création · Tangerang Selatan
+            Rumah Kriya Adibusana · Nusaloka, BSD City
           </span>
           <span className="text-[10px] tracking-widest px-2.5 py-0.5 rounded-full bg-[#1e1c19] text-[#d6c7b2] border border-[#c5a880]/20">
-            TEI 2026 Curated
+            Kurasi TEI 2026 · INACRAFT &amp; KriyaNusa
           </span>
         </div>
 
@@ -59,14 +59,14 @@ export default function Hero({ onSelectProduct }) {
           {/* Left Column: Editorial Headline & Manifesto */}
           <div className="lg:col-span-7 space-y-7">
             <h1 className="font-serif-luxury text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-[#fbf8f5] leading-[1.08]">
-              Haute Maroquinerie <br />
+              Mahakarya Kulit Eksotis <br />
               <span className="italic font-normal gold-gradient-text">
-                &amp; Ancestral Indonesian Wastra.
+                &amp; Warisan Wastra Nusantara.
               </span>
             </h1>
 
             <p className="text-base sm:text-lg text-[#b8b2a7] font-light leading-relaxed max-w-2xl">
-              From our private atelier in BSD City, Ninauka transforms Indonesia’s rarest natural treasures—certified exotic python hide, ancient handspun <span className="text-[#fbf8f5] font-normal">Tenun Baduy</span> on wooden gedogan looms, and wild <span className="text-[#fbf8f5] font-normal">Dayak Doyo leaf fiber</span>—into collector-grade luxury handbags and evening clutches.
+              Dari atelier privat kami di Nusaloka, BSD City, Tangerang Selatan, Ninauka mengolah kekayaan alam paling langka di Indonesia—kulit ular piton bersertifikat <span className="text-[#fbf8f5] font-normal">CITES</span>, kesakralan <span className="text-[#fbf8f5] font-normal">Tenun Baduy Gedogan</span>, serat liar <span className="text-[#fbf8f5] font-normal">Ulap Doyo Kalimantan Timur</span>, hingga <span className="text-[#fbf8f5] font-normal">Tenun Inuh Lampung</span>—menjadi tas tangan dan <em>evening clutch</em> berstandar kolektor dunia yang telah dikurasi di panggung INACRAFT, KriyaNusa, dan Trade Expo Indonesia 2026.
             </p>
 
             {/* Micro Credibility Badges */}
@@ -74,22 +74,22 @@ export default function Hero({ onSelectProduct }) {
               <div className="p-3 rounded-lg bg-[#141413] border border-white/5 flex items-center gap-2.5">
                 <ShieldCheck className="w-4 h-4 text-[#c5a880] shrink-0" />
                 <div>
-                  <div className="text-[11px] font-semibold text-[#e8e4dc]">CITES Certified</div>
-                  <div className="text-[9px] text-[#8e8980]">Ethical Python Hide</div>
+                  <div className="text-[11px] font-semibold text-[#e8e4dc]">Sertifikasi CITES</div>
+                  <div className="text-[9px] text-[#8e8980]">Kulit Piton Lestari</div>
                 </div>
               </div>
               <div className="p-3 rounded-lg bg-[#141413] border border-white/5 flex items-center gap-2.5">
                 <Feather className="w-4 h-4 text-[#c5a880] shrink-0" />
                 <div>
-                  <div className="text-[11px] font-semibold text-[#e8e4dc]">Ancient Gedogan</div>
-                  <div className="text-[9px] text-[#8e8980]">Baduy Tribal Looms</div>
+                  <div className="text-[11px] font-semibold text-[#e8e4dc]">Tenun Gedogan</div>
+                  <div className="text-[9px] text-[#8e8980]">Adat Baduy Kanekes</div>
                 </div>
               </div>
               <div className="p-3 rounded-lg bg-[#141413] border border-white/5 flex items-center gap-2.5">
                 <Compass className="w-4 h-4 text-[#c5a880] shrink-0" />
                 <div>
-                  <div className="text-[11px] font-semibold text-[#e8e4dc]">Wild Doyo Fiber</div>
-                  <div className="text-[9px] text-[#8e8980]">East Kalimantan</div>
+                  <div className="text-[11px] font-semibold text-[#e8e4dc]">Serat Ulap Doyo</div>
+                  <div className="text-[9px] text-[#8e8980]">Dayak Kalimantan Timur</div>
                 </div>
               </div>
             </div>
@@ -100,17 +100,17 @@ export default function Hero({ onSelectProduct }) {
                 href="#collections"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#c5a880] text-[#0e0e0d] font-semibold text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-[#d8c19f] hover:shadow-[0_0_30px_rgba(197,168,128,0.35)]"
               >
-                <span>Explore Haute Collections</span>
+                <span>Jelajahi Koleksi Utama</span>
                 <ArrowDownRight className="w-4 h-4" />
               </a>
 
               <a
-                href={`https://wa.me/${BRAND.whatsappNumber}?text=Halo%20Ninauka,%20saya%20tertarik%20dengan%20katalog%20tas%20dan%20clutch%20haute%20couture.`}
+                href={`https://wa.me/${BRAND.whatsappNumber}?text=Halo%20Ninauka%20Atelier,%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20koleksi%20tas%20kulit%20eksotis%20dan%20wastra%20Nusantara.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full border border-[#c5a880]/30 text-[#e8e4dc] hover:text-[#c5a880] hover:border-[#c5a880] text-xs tracking-[0.2em] uppercase transition-all duration-300"
               >
-                <span>Private Consultation</span>
+                <span>Konsultasi Privat</span>
               </a>
             </div>
           </div>
@@ -179,7 +179,7 @@ export default function Hero({ onSelectProduct }) {
                     href="#collections"
                     className="text-[11px] text-[#c5a880] hover:underline tracking-wider uppercase font-medium flex items-center gap-1 shrink-0 px-2"
                   >
-                    <span>All Pieces</span>
+                    <span>Semua Karya</span>
                     <ArrowDownRight className="w-3.5 h-3.5" />
                   </a>
                 </div>

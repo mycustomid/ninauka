@@ -1,6 +1,6 @@
 import React from 'react';
-import { ATELIER_SPECS, BRAND } from '../data/ninaukaData';
-import { Globe2, FileText, CheckCircle2, Building2, Truck, ShieldCheck } from 'lucide-react';
+import { ATELIER_SPECS } from '../data/ninaukaData';
+import { Globe2, CheckCircle2, Building2, Truck, ShieldCheck } from 'lucide-react';
 
 export default function AtelierSpecs() {
   const icons = [Building2, Globe2, ShieldCheck, Truck];
@@ -11,13 +11,13 @@ export default function AtelierSpecs() {
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-14">
           <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-[0.25em] text-[#c5a880] font-cinzel">
             <Globe2 className="w-4 h-4" />
-            <span>Commercial Specifications</span>
+            <span>Spesifikasi Komersial &amp; Kemitraan</span>
           </div>
           <h2 className="font-serif-luxury text-3xl sm:text-4xl text-[#fbf8f5] font-light">
-            International Export Dossier.
+            Dossier Ekspor Internasional.
           </h2>
           <p className="text-xs sm:text-sm text-[#8e8980] font-light">
-            Engineered for high-end international boutiques, luxury department stores, and private label procurement.
+            Dirancang untuk memenuhi standar butik mode internasional, galeri ritel premium, pengadaan B2B melalui PaDi UMKM, serta kemitraan label privat.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function AtelierSpecs() {
 
                 <div className="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-[11px] text-emerald-400">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>Verified TEI 2026 Standards</span>
+                  <span>Terverifikasi Standar TEI 2026 &amp; INACRAFT</span>
                 </div>
               </div>
             );

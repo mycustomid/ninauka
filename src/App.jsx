@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import BrandManifesto from './components/BrandManifesto';
@@ -9,7 +9,7 @@ import AtelierSpecs from './components/AtelierSpecs';
 import ConciergeSection from './components/ConciergeSection';
 import Footer from './components/Footer';
 import { BRAND } from './data/ninaukaData';
-import { MessageCircle, Sparkles } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 export default function App() {
   return (
@@ -45,9 +45,9 @@ export default function App() {
       <Footer />
 
       {/* Floating Concierge Action Trigger */}
-      <aside aria-label="Quick Concierge" className="fixed bottom-6 right-6 z-40">
+      <aside aria-label="Layanan Concierge Cepat" className="fixed bottom-6 right-6 z-40">
         <a
-          href={`https://wa.me/${BRAND.whatsappNumber}?text=Halo%20Ninauka%20Atelier,%20saya%20ingin%20berkonsultasi%20mengenai%20koleksi%20haute%20couture.`}
+          href={`https://wa.me/${BRAND.whatsappNumber}?text=Halo%20Ninauka%20Atelier,%20saya%20ingin%20berkonsultasi%20mengenai%20koleksi%20tas%20kulit%20eksotis%20dan%20wastra%20Nusantara.`}
           target="_blank"
           rel="noopener noreferrer"
           className="group relative flex items-center gap-3 px-4 py-3 rounded-full bg-[#1c1b19]/90 backdrop-blur-md border border-[#c5a880]/40 shadow-2xl transition-all duration-300 hover:scale-105 hover:border-[#c5a880]"
@@ -60,10 +60,10 @@ export default function App() {
           </div>
           <div className="hidden sm:block text-left pr-1">
             <span className="block text-[9px] uppercase tracking-widest text-[#c5a880] font-cinzel">
-              Private Concierge
+              Concierge Privat
             </span>
             <span className="block text-xs font-semibold text-[#fbf8f5]">
-              Chat Atelier
+              Hubungi Atelier
             </span>
           </div>
         </a>
