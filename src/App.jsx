@@ -99,7 +99,7 @@ function Header({go,path}){
       <small>MAISON KRIYA INDONESIA</small>
     </A>
     <nav className="header-links" aria-label="Navigasi utama">{nav.map(n=><A key={n.to} to={n.to} go={go} className={path===n.to?'active':''}>{n.label}</A>)}</nav>
-    <div className="header-right"><A to="/contact" go={go} className="header-inquiry">Konsultasi Privat <ArrowUpRight size={16}/></A><button className="menu-toggle" onClick={()=>setOpen(v=>!v)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open?'Tutup menu':'Buka menu'}>{open?<X size={23}/>:<Menu size={23}/></button></div>
+    <div className="header-right"><A to="/contact" go={go} className="header-inquiry">Konsultasi Privat <ArrowUpRight size={16}/></A><button className="menu-toggle" onClick={()=>setOpen(v=>!v)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open?'Tutup menu':'Buka menu'}>{open?<X size={23}/>:<Menu size={23}/>}</button></div>
  </header>
  <div className={'mobile-menu '+(open?'mobile-menu-show':'')} id="mobile-navigation" aria-hidden={!open}>
    <span className="mobile-label">NAVIGASI / NINAUKA</span>
