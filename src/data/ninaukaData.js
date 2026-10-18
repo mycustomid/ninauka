@@ -1,11 +1,11 @@
 export const BRAND = {
   name: "NINAUKA",
-  tagline: "Mahakarya Kulit Eksotis & Warisan Wastra Nusantara",
-  subTagline: "Ketika Kemewahan Kulit Piton Bersertifikat CITES Berpadu dengan Kesakralan Tenun Baduy Gedogan & Serat Liar Ulap Doyo Kalimantan.",
+  tagline: "Kriya Nusantara, Diciptakan untuk Dikenang",
+  subTagline: "Ragam karya tangan dari tenun Baduy, Ulap Doyo, goni, kulit, batik, serat dan bahan alam Indonesia.",
   founder: "Titik Kurniasih",
   founderTitle: "Pendiri & Direktur Kreatif",
   origin: "Nusaloka, BSD City, Tangerang Selatan, Indonesia",
-  curatedBadge: "Kurasi Resmi · Trade Expo Indonesia 2026 · INACRAFT & KriyaNusa",
+  curatedBadge: "Karya Ninauka · Profil dan katalog 2026",
   address: "Nusaloka, BSD City, Sektor XIV-4, Blok J9/8, Jl. Jawa V, Tangerang Selatan, Banten 15310, Indonesia",
   phone: "+62 813-1400-7827",
   whatsappNumber: "6281314007827",
@@ -20,26 +20,10 @@ export const BRAND = {
 };
 
 export const STATS = [
-  {
-    number: "100%",
-    label: "Kriya Tangan Maestro",
-    description: "Setiap mahakarya dipotong, dirakit, dan diselesaikan dengan tangan di Atelier Nusaloka, BSD City."
-  },
-  {
-    number: "CITES",
-    label: "Kulit Piton Bersertifikat",
-    description: "Kulit ular piton asli yang bersumber secara lestari sesuai standar konservasi ekspor internasional."
-  },
-  {
-    number: "Leluhur",
-    label: "Tenun Gedogan Baduy",
-    description: "Benang kapas pintal alami yang ditenun dengan alat gedogan kayu tradisional oleh perempuan adat Kanekes."
-  },
-  {
-    number: "100%",
-    label: "Pewarna Nabati Hutan",
-    description: "Serat daun Doyo liar Kalimantan yang diwarnai ekstrak buah Glinggam, kayu Bayor, dan kulit kayu hutan."
-  }
+ {number:'Kriya',label:'Beragam bahan Indonesia',description:'Pandan, lontar, rotan, mendong, agel, batik, tempurung kelapa, manik-manik, wastra, goni dan kulit.'},
+ {number:'Baduy',label:'Tradisi tenun gedogan',description:'Kain tradisional dari Kanekes, Lebak, Banten.'},
+ {number:'Doyo',label:'Serat Kalimantan Timur',description:'Tradisi pengolahan daun doyo dan pewarnaan alam yang terdokumentasi dalam company profile.'},
+ {number:'SDM',label:'Pengembangan keterampilan',description:'Misi Ninauka mencakup peningkatan SDM, khususnya ibu rumah tangga; tanpa klaim jumlah penerima manfaat.'}
 ];
 
 export const CATEGORIES = [
@@ -58,8 +42,8 @@ export const PRODUCTS = [
     category: "python",
     categoryLabel: "Kulit Piton Eksotis",
     dimensions: "26 x 7 x 15 cm",
-    materials: "Kulit Ular Piton Asli Bersertifikat CITES, Interior Kulit Sapi Halus, Kunci Putar & Gembok Berlapis Emas, Tali Bahu Lepas-Pasang",
-    leadTime: "Tersedia / Pesanan Khusus (7–14 Hari)",
+    materials: "Kulit piton; spesifikasi lapisan dan aksesori dikonfirmasi oleh atelier.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Mahakarya Utama",
     image: "/images/products/kelly-ke01-front.jpg",
     gallery: [
@@ -76,8 +60,8 @@ export const PRODUCTS = [
     category: "python",
     categoryLabel: "Kulit Piton Eksotis",
     dimensions: "27 x 12 x 19 cm",
-    materials: "Kulit Piton Retikulasi Eksotis, Rangka Kulit Sapi Samak Nabati (Vegetable-Tanned), Clochette & Gembok Kunci Emas",
-    leadTime: "Tersedia / Kustomisasi Privat",
+    materials: "Kulit piton; detail konstruksi dan aksesori dikonfirmasi oleh atelier.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Pilihan Kolektor",
     image: "/images/products/kelly-kc02-front.jpg",
     gallery: [
@@ -94,8 +78,8 @@ export const PRODUCTS = [
     category: "python",
     categoryLabel: "Kulit Piton Eksotis",
     dimensions: "16 x 5 x 9 cm",
-    materials: "Kulit Piton Alami, Rangka Logam Kaku Berlapis Emas, Pengait Kisslock Berukir, Lapisan Dalam Beludru Halus, Rantai Bahu",
-    leadTime: "Stok Terbatas / Edisi Kurasi",
+    materials: "Kulit piton dengan rangka clutch; material komponen lainnya perlu dikonfirmasi.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Edisi Karpet Merah",
     image: "/images/products/minaudiere-ma03-hero.jpg",
     gallery: [
@@ -112,8 +96,8 @@ export const PRODUCTS = [
     category: "python",
     categoryLabel: "Kulit Piton Eksotis",
     dimensions: "16 x 5 x 9 cm",
-    materials: "Kulit Piton Glasir Artisan, Pengait Arsitektural Emas Redup, Lapisan Dalam Micro-Suede",
-    leadTime: "Edisi Terbatas",
+    materials: "Kombinasi kulit dan tekstil pada desain minaudière; bahan rinci dikonfirmasi oleh atelier.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Eksklusif Atelier",
     image: "/images/products/minaudiere-ma05-variant.jpg",
     gallery: [
@@ -129,8 +113,8 @@ export const PRODUCTS = [
     category: "python",
     categoryLabel: "Kulit Piton Eksotis",
     dimensions: "22 x 3 x 15 cm",
-    materials: "Kulit Piton Asli, Kompartemen Ganda Beritsleting, Slot Kartu Kulit Interior, Tali Pergelangan Tangan",
-    leadTime: "Stok Tersedia",
+    materials: "Kulit bertekstur pada multi clutch; detail komponen dikonfirmasi oleh atelier.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Kemewahan Fungsional",
     image: "/images/products/multiclutch-mcb02-front.jpg",
     gallery: [
@@ -146,8 +130,8 @@ export const PRODUCTS = [
     category: "python",
     categoryLabel: "Kulit Piton Eksotis",
     dimensions: "19 x 14 cm",
-    materials: "Kulit Piton Asli, Siluet Geometris Rumah Limas, Pegangan Gelang Lingkar Logam, Penutup Magnetik Tersembunyi",
-    leadTime: "Pesanan Khusus (Made-to-Order)",
+    materials: "Kulit dalam konstruksi tas Limas; komposisi rinci dikonfirmasi oleh atelier.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Siluet Avant-Garde",
     image: "/images/products/limas-lp1-pyramid.jpg",
     gallery: [
@@ -157,13 +141,13 @@ export const PRODUCTS = [
   },
   {
     id: "doyo-env",
-    code: "DE.01",
+    code: null,
     title: "Tas Amplop Tenun Ulap Doyo & Piton",
     category: "doyo",
     categoryLabel: "Serat Daun Ulap Doyo",
-    dimensions: "28 x 6 x 18 cm",
-    materials: "Serat Daun Doyo Liar (Curculigo latifolia), Pewarna Nabati Buah Glinggam & Kayu Bayor, Penutup Kulit Piton Asli, Sisi Kulit Sapi",
-    leadTime: "Edisi Warisan Terbatas",
+    dimensions: "",
+    materials: "Tenun Ulap Doyo dikombinasikan dengan kulit piton; perincian per varian dikonfirmasi oleh atelier.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Serat Pusaka Dayak",
     image: "/images/products/doyo-envelope-front.jpg",
     gallery: [
@@ -175,13 +159,13 @@ export const PRODUCTS = [
   },
   {
     id: "doyo-tote",
-    code: "DT.02",
+    code: null,
     title: "Grand Tote Tenun Ulap Doyo & Kulit",
     category: "doyo",
     categoryLabel: "Serat Daun Ulap Doyo",
-    dimensions: "34 x 12 x 26 cm",
-    materials: "Tenun Serat Daun Doyo Dayak Benuag, Lis Kulit Piton Asli, Alas & Tali Bahu Kulit Sapi Full-Grain Kokoh",
-    leadTime: "Siap Ekspor Terkurasi",
+    dimensions: "",
+    materials: "Ulap Doyo dalam kombinasi material kulit; komposisi per varian dikonfirmasi oleh atelier.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Adibusana Berkelanjutan",
     image: "/images/products/doyo-python-cowhide-tote.jpg",
     gallery: [
@@ -192,13 +176,13 @@ export const PRODUCTS = [
   },
   {
     id: "tb-tote",
-    code: "TB.01",
+    code: null,
     title: "Tote Warisan Tenun Baduy Gedogan",
     category: "baduy",
     categoryLabel: "Tenun Baduy Gedogan",
-    dimensions: "32 x 10 x 25 cm",
-    materials: "Kapas Pintal Tangan pada Alat Tenun Gedogan Kayu oleh Perajin Baduy Kanekes, Pegangan Kulit Sapi Asli, Pewarna Ramah Lingkungan",
-    leadTime: "Stok Tersedia",
+    dimensions: "",
+    materials: "Tenun Baduy; bahan tambahan dan dimensi tiap desain dikonfirmasi ke atelier.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Tenun Sakral Kanekes",
     image: "/images/products/baduy-heritage-tote.jpg",
     gallery: [
@@ -209,13 +193,13 @@ export const PRODUCTS = [
   },
   {
     id: "tb-pouch",
-    code: "TB.02",
+    code: null,
     title: "Pouch Selempang Tenun Baduy",
     category: "baduy",
     categoryLabel: "Tenun Baduy Gedogan",
-    dimensions: "20 x 5 x 16 cm",
-    materials: "Kain Tenun Gedogan Baduy Asli, Ritsleting Kuningan Antik, Tali Selempang Kulit Sapi yang Dapat Disesuaikan",
-    leadTime: "Stok Tersedia",
+    dimensions: "",
+    materials: "Tenun Baduy dalam desain aksesori; spesifikasi dikonfirmasi oleh atelier.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Keanggunan Nomaden",
     image: "/images/products/baduy-crossbody-pouch.jpg",
     gallery: [
@@ -225,13 +209,13 @@ export const PRODUCTS = [
   },
   {
     id: "tb-clutch",
-    code: "TB.03",
+    code: null,
     title: "Clutch Amplop Artisan Tenun Baduy",
     category: "baduy",
     categoryLabel: "Tenun Baduy Gedogan",
-    dimensions: "25 x 4 x 17 cm",
-    materials: "Tenun Tangan Baduy Pilihan, Penutup Kulit Sapi Warna Tan Hangat, Kunci Magnetik, Interior Satin Halus",
-    leadTime: "Stok Tersedia",
+    dimensions: "",
+    materials: "Tenun Baduy dalam desain aksesori; spesifikasi dikonfirmasi oleh atelier.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Siang hingga Malam",
     image: "/images/products/baduy-artisan-clutch.jpg",
     gallery: [
@@ -241,13 +225,13 @@ export const PRODUCTS = [
   },
   {
     id: "tb-shop",
-    code: "TB.04",
+    code: null,
     title: "Grand Shopper Tenun Baduy Eksekutif",
     category: "baduy",
     categoryLabel: "Tenun Baduy Gedogan",
-    dimensions: "38 x 14 x 30 cm",
-    materials: "Kain Tenun Katun Baduy Tebal, Pegangan Kulit Sapi Lapis Ganda, Paku Keling Kuningan Padat",
-    leadTime: "Pesanan Korporat & VIP",
+    dimensions: "",
+    materials: "Tenun Baduy dalam desain tas; spesifikasi dikonfirmasi oleh atelier.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Andalan Eksekutif",
     image: "/images/products/baduy-grand-shopper.jpg",
     gallery: [
@@ -261,9 +245,9 @@ export const PRODUCTS = [
     title: "Tote Eco-Luxe Goni & Kulit Sapi Hitam",
     category: "goni",
     categoryLabel: "Goni & Kulit Adibusana",
-    dimensions: "30 x 10 x 24 cm",
-    materials: "Serat Goni Alami Nusantara (Natural Jute/Burlap), Lis & Pegangan Kulit Sapi Hitam Pekat, Lapisan Dalam Katun Twill",
-    leadTime: "Stok Tersedia",
+    dimensions: "",
+    materials: "Goni dengan kombinasi material hitam; rincian bahan dan ukuran dikonfirmasi.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Gaya Ramah Lingkungan",
     image: "/images/products/goni-ga1-black-cowhide.jpg",
     gallery: [
@@ -277,9 +261,9 @@ export const PRODUCTS = [
     title: "Tote Goni Aksen Tenun Baduy",
     category: "goni",
     categoryLabel: "Goni & Kulit Adibusana",
-    dimensions: "30 x 10 x 24 cm",
-    materials: "Serat Goni Alami Pilihan, Sisipan Pita Tenun Baduy Gedogan, Tali Bahu Kulit Sapi Warna Cognac",
-    leadTime: "Stok Tersedia",
+    dimensions: "",
+    materials: "Goni dalam kombinasi tenun Baduy; rincian bahan dan ukuran dikonfirmasi.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Sintesis Budaya",
     image: "/images/products/goni-ga2-baduy-accent.jpg",
     gallery: [
@@ -293,9 +277,9 @@ export const PRODUCTS = [
     title: "Clutch Tailored Goni & Kulit Sapi",
     category: "goni",
     categoryLabel: "Goni & Kulit Adibusana",
-    dimensions: "24 x 4 x 15 cm",
-    materials: "Tenunan Goni Halus Pilihan, Penutup & Piping Kulit Sapi Full-Grain, Ritsleting Logam Presisi",
-    leadTime: "Tersedia / Hampers VIP",
+    dimensions: "",
+    materials: "Goni dengan kombinasi kulit; rincian bahan dan ukuran dikonfirmasi.",
+    leadTime: "Tanyakan ketersediaan dan waktu pengerjaan",
     badge: "Eksotisme Tropis",
     image: "/images/products/goni-ga3-clutch-cowhide.jpg",
     gallery: [
@@ -309,60 +293,44 @@ export const CRAFTSMANSHIP_CHAPTERS = [
   {
     id: "doyo",
     number: "01",
-    title: "Serat Daun Doyo Liar dari Jempang",
-    subtitle: "Warisan Pusaka Suku Dayak Benuag, Kalimantan Timur",
+    title: "Serat Daun Doyo dari Kalimantan Timur",
+    subtitle: "Warisan tenun Ulap Doyo",
     image: "/images/story/doyo-leaf-fiber-harvest.jpg",
     secondaryImage: "/images/story/doyo-natural-dyeing.jpg",
-    body: "Jauh di pedalaman hutan hujan Kalimantan Timur di kawasan Tanjung Isuy dan Danau Jempang, tumbuh tanaman liar Curculigo latifolia yang dikenal sebagai daun Doyo. Selama berabad-abad, perempuan suku Dayak Benuag memanen dan menyerat daun ini dengan tangan untuk menghasilkan benang halus sekuat sutra. Setiap untai benang diwarnai secara murni menggunakan racikan botani hutan: merah marun dari buah Glinggam, cokelat tanah dari kayu Bayor, serta rona keemasan dari kulit kayu rimba."
+    body: "Dokumentasi Ninauka menjelaskan penggunaan serat daun doyo yang diserat dan ditenun, termasuk contoh pewarnaan dari bahan alam seperti glinggam dan kayu bayor. Asal dan metode tiap material pada produk dapat ditanyakan kepada atelier."
   },
   {
     id: "baduy",
     number: "02",
-    title: "Tenun Gedogan Kanekes & Eksplorasi Wastra",
-    subtitle: "Kearifan Lebak Banten, Tenun Inuh Lampung hingga Ecoprint",
+    title: "Tenun Gedogan Baduy",
+    subtitle: "Tradisi Kanekes, Lebak, Banten",
     image: "/images/story/baduy-gedogan-loom.jpg",
     secondaryImage: "/images/story/baduy-textile-detail.jpg",
-    body: "Di perbukitan sunyi desa adat Kanekes, Lebak, Banten, para perempuan Baduy merawat tradisi menenun dengan alat gedogan kayu yang bertumpu pada keseimbangan tubuh penenunnya. Selain Tenun Baduy, atelier Ninauka juga mengolah kemegahan Tenun Inuh Lampung, Batik & Ecoprint, serta ragam serat alam Nusantara—mulai dari goni, pandan, lontar, rotan, mendong, agel, hingga batok kelapa—yang secara konsisten memukau panggung pameran INACRAFT dan KriyaNusa."
+    body: "Tenun Baduy dikerjakan menggunakan alat gedogan. Katalog Ninauka menyebut penggunaan pewarna alami dan sintetis yang aman; karena itu, tidak semua kain dapat diklaim 100% berpewarna alami."
   },
   {
     id: "python",
     number: "03",
-    title: "Adibusana Kulit Eksotis & Sertifikasi CITES",
-    subtitle: "Kepatuhan Konservasi Internasional & Presisi Maroquinerie",
+    title: "Kriya Kulit dalam Koleksi Ninauka",
+    subtitle: "Siluet, tekstur, konstruksi",
     image: "/images/products/kelly-ke01-front.jpg",
     secondaryImage: "/images/products/minaudiere-ma03-detail.jpg",
-    body: "Ninauka hanya menggunakan kulit ular piton eksotis bersertifikat resmi di bawah traktat pelestarian satwa internasional CITES serta kulit sapi samak nabati (full-grain cowhide) terbaik. Setiap lembar kulit diseleksi secara ketat demi keseragaman sisik, kelenturan alami, dan kemewahan tekstur. Maestro perajin kami menghaluskan tepian kulit secara manual, menjahit lipatan dengan benang berdaya tahan tinggi, serta memasang perangkat logam berlapis emas yang tak lekang oleh waktu."
+    body: "Katalog menampilkan karya berbahan kulit piton dan berbagai model tas. Asal legal material dan dokumen CITES, apabila diperlukan untuk transaksi tertentu, harus dikonfirmasi sesuai produk dan negara tujuan."
   },
   {
     id: "packaging",
     number: "04",
-    title: "Kemasan Kolektor & Bingkisan VIP / Diplomatik",
-    subtitle: "Persembahan Berkelas untuk Kolektor Global & Korporasi",
+    title: "Kemasan Ninauka",
+    subtitle: "Presentasi produk & hadiah",
     image: "/images/story/exclusive-luxury-packaging.jpg",
     secondaryImage: "/images/story/curated-exhibition.jpg",
-    body: "Setiap karya Ninauka dipersembahkan dalam rangkaian kemasan berstandar galeri: kotak magnetik kaku (rigid box) berlapis matte noir dengan embos emas, kantung pelindung beludru (velvet dust bag), serta Sertifikat Keaslian bernomor seri. Bagi klien korporat, BUMN melalui ekosistem PaDi UMKM, tamu kenegaraan, maupun perhelatan pernikahan mewah, kami menyediakan layanan monogram inisial khusus dan kurasi hampers eksklusif."
+    body: "Company profile menampilkan kemasan bermerek Ninauka dalam beberapa pilihan warna. Kemasan akhir, kartu informasi, dan opsi personalisasi bergantung pada pesanan dan konfirmasi atelier."
   }
 ];
 
 export const ATELIER_SPECS = [
-  {
-    title: "Kapasitas Produksi Atelier",
-    value: "150 – 300 Karya / Bulan",
-    detail: "Dikerjakan dalam kelompok produksi terbatas di Nusaloka BSD City guna menjamin ketelitian jahitan dan kualitas kriya tangan."
-  },
-  {
-    title: "Kurasi Ekspor & Prestasi",
-    value: "TEI 2026, INACRAFT & KriyaNusa",
-    detail: "Delegasi ekspor unggulan Disperindag Tangerang Selatan di Trade Expo Indonesia 2026, eksibitor INACRAFT & KriyaNusa, serta juara Tangsel Digifest."
-  },
-  {
-    title: "Kustomisasi VIP & PaDi UMKM",
-    value: "Label Privat & Pengadaan B2B",
-    detail: "Layanan pemilihan warna kulit eksotis, grafir monogram emas 24k, suvenir diplomatik, serta pengadaan resmi melalui ekosistem PaDi UMKM."
-  },
-  {
-    title: "Logistik Ekspor Dunia",
-    value: "DHL Express & Dokumen CITES",
-    detail: "Pengiriman udara global lengkap dengan dokumen kepabeanan ekspor, sertifikasi CITES, sertifikat fumigasi, dan pengemasan berstandar butik."
-  }
+ {title:'Ragam material',value:'Wastra, serat & kulit',detail:'Variasi produk dijelaskan dalam company profile dan konsultasi atelier.'},
+ {title:'Pesanan untuk acara',value:'Gift & suvenir',detail:'Kegiatan pemberian hadiah untuk acara dan tamu luar negeri tercantum dalam sejarah usaha; opsi pesanan perlu dikonfirmasi.'},
+ {title:'Kapasitas & personalisasi',value:'Konfirmasi per pesanan',detail:'Jumlah minimum, tenggat, serta pilihan personalisasi diverifikasi sebelum menerima pesanan.'},
+ {title:'Pengiriman luar negeri',value:'Tinjauan sesuai tujuan',detail:'Perizinan terkait material yang diatur CITES harus ditentukan untuk produk, spesies, dan negara tujuan tertentu.'}
 ];

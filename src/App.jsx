@@ -2,6 +2,7 @@ import React, {useEffect, useState, useMemo, useRef} from 'react';
 import {ArrowUpRight, ArrowRight, ArrowLeft, ChevronDown, Plus, Minus, Menu, X, Mail, MapPin, MessageCircle, Search, Check, MoveUpRight, ChevronLeft, ChevronRight} from 'lucide-react';
 import {BRAND, PRODUCTS, CATEGORIES, CRAFTSMANSHIP_CHAPTERS} from './data/ninaukaData';
 import {ARTICLES} from './data/journal';
+import { BrandOrigins, VisionMission, MaterialPanorama, EditionPreview, Edition2026, PackagingReality } from './components/Heritage2026';
 import {PRIMARY_CHANNELS, PUBLIC_SAME_AS} from './data/brandChannels';
 import { FloatingWhatsApp, CollectionMaterials, ProductDossier, MaisonInterlude, CraftIndex, JournalInterlude, BespokeCurations, AtelierVisit, ArticleReadingProgress, AtelierChannels } from './components/EditorialEnhancements';
 import './index.css';
@@ -19,6 +20,7 @@ function Instagram({size=18, className='', strokeWidth=1.75}) {
 const W = '/images/';
 const nav = [
   {to:'/collections',label:'Koleksi'},
+  {to:'/edisi-2026',label:'Edisi 2026'},
   {to:'/maison',label:'Maison'},
   {to:'/savoir-faire',label:'Kriya & Wastra'},
   {to:'/journal',label:'Jurnal'},
@@ -65,7 +67,7 @@ function ProductCard({p,go,i=0}){
  return <article className="product-card"><A to={'/pieces/'+p.id} go={go} className="product-visual">
    <Photo src={p.image} alt={`${p.title} — ${p.categoryLabel}`} contain/>
    <span className="product-card-count">{String(i+1).padStart(2,'0')} / NINAUKA</span><span className="product-card-action"><ArrowUpRight size={22}/></span>
-   </A><div className="product-card-info"><div><span>{p.categoryLabel}</span><h3><A to={'/pieces/'+p.id} go={go}>{p.title}</A></h3></div><span>{p.code}</span></div></article>
+   </A><div className="product-card-info"><div><span>{p.categoryLabel}</span><h3><A to={'/pieces/'+p.id} go={go}>{p.title}</A></h3></div><span>{p.code || 'ARSIP'}</span></div></article>
 }
 function ArticleCard({a,go,featured=false}){
  return <article className={'article-card '+(featured?'article-feature':'')}>
@@ -75,10 +77,10 @@ function ArticleCard({a,go,featured=false}){
 }
 function HeadSEO({title,description,image,product}){
  useEffect(()=>{
-  const textTitle=title?title+' — NINAUKA':'NINAUKA — Mahakarya Kulit Eksotis & Warisan Wastra Nusantara';
+  const textTitle=title?title+' — NINAUKA':'NINAUKA — Kriya Nusantara, Diciptakan untuk Dikenang';
   document.title=textTitle;
   const put=(selector,tag,attrs,value)=>{let t=document.head.querySelector(selector);if(!t){t=document.createElement(tag);Object.entries(attrs).forEach(([k,v])=>t.setAttribute(k,v));document.head.appendChild(t)}t.setAttribute('content',value)};
-  const desc=description||'Ninauka Atelier: koleksi tas kulit eksotis dan wastra Nusantara, tentang kriya tangan, tradisi, dan desain kontemporer.';
+  const desc=description||'Ninauka adalah rumah kriya Indonesia yang menghadirkan aksesori dari tenun Baduy, Ulap Doyo, goni, kulit, dan aneka serat alam Nusantara.';
   put('meta[name="description"]','meta',{name:'description'},desc);
   put('meta[property="og:title"]','meta',{property:'og:title'},textTitle);
   put('meta[property="og:description"]','meta',{property:'og:description'},desc);
@@ -99,7 +101,7 @@ function Header({go,path}){
  return <><header className={'site-header '+(scrolled?'header-scroll':'')}>
     <A to="/" go={go} className="wordmark" aria-label="Ninauka, kembali ke beranda">
       <img src={BRAND.logoDark || '/brand/ninauka-logo-clean.png'} alt="NINAUKA" style={{height:'32px',width:'auto',objectFit:'contain'}}/>
-      <small>MAISON KRIYA INDONESIA</small>
+      <small>RUMAH KRIYA NUSANTARA</small>
     </A>
     <nav className="header-links" aria-label="Navigasi utama">{nav.map(n=><A key={n.to} to={n.to} go={go} className={path===n.to?'active':''}>{n.label}</A>)}</nav>
     <div className="header-right"><A to="/contact" go={go} className="header-inquiry">Konsultasi Privat <ArrowUpRight size={16}/></A><button className="menu-toggle" onClick={()=>setOpen(v=>!v)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open?'Tutup menu':'Buka menu'}>{open?<X size={23}/>:<Menu size={23}/>}</button></div>
@@ -107,32 +109,32 @@ function Header({go,path}){
  <div className={'mobile-menu '+(open?'mobile-menu-show':'')} id="mobile-navigation" aria-hidden={!open}>
    <span className="mobile-label">NAVIGASI / NINAUKA</span>
    {nav.map((n,i)=><A key={n.to} to={n.to} go={go} tabIndex={open?0:-1} className="mobile-route"><small>0{i+1}</small>{n.label}<ArrowUpRight/></A>)}
-   <A to="/contact" go={go} tabIndex={open?0:-1} className="mobile-route"><small>06</small>Kontak Atelier<ArrowUpRight/></A>
+   <A to="/contact" go={go} tabIndex={open?0:-1} className="mobile-route"><small>07</small>Kontak Atelier<ArrowUpRight/></A>
    <div className="mobile-menu-meta">BSD CITY — TANGERANG SELATAN <span>KRIYA ASLI INDONESIA</span></div>
  </div></>;
 }
 function Footer({go}){
  return <footer className="site-footer"><div className="footer-first"><Tag>PERCAKAPAN BERLANJUT</Tag><h2>Karya dengan cerita.<br/><em>Cerita yang layak dibawa.</em></h2><RoundArrow to="/contact" go={go}>Hubungi atelier</RoundArrow></div>
-  <div className="footer-sections"><div className="footer-brand"><A to="/" go={go}><img src={BRAND.logo || '/brand/ninauka-logo-light.png'} alt="NINAUKA" style={{height:'42px',width:'auto',objectFit:'contain'}}/></A><span>Kemewahan kriya berpadu warisan wastra Indonesia.<br/>Nusaloka, BSD City, Tangerang Selatan.</span></div><div><b>RUMAH KRIYA</b>{nav.map(n=><A to={n.to} go={go} key={n.to}>{n.label}</A>)}</div><div><b>KONSULTASI PRIVAT</b><a href={'mailto:'+BRAND.email}>{BRAND.email}</a><a href={inquiries()} target="_blank" rel="noreferrer">WhatsApp Atelier <ArrowUpRight size={13}/></a><a href={BRAND.instagramUrl} target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={13}/></a></div></div>
+  <div className="footer-sections"><div className="footer-brand"><A to="/" go={go}><img src={BRAND.logo || '/brand/ninauka-logo-light.png'} alt="NINAUKA" style={{height:'42px',width:'auto',objectFit:'contain'}}/></A><span>Karya kreatif dari wastra, serat alam, dan material Nusantara.<br/>Nusaloka, BSD City, Tangerang Selatan.</span></div><div><b>RUMAH KRIYA</b>{nav.map(n=><A to={n.to} go={go} key={n.to}>{n.label}</A>)}</div><div><b>KONSULTASI PRIVAT</b><a href={'mailto:'+BRAND.email}>{BRAND.email}</a><a href={inquiries()} target="_blank" rel="noreferrer">WhatsApp Atelier <ArrowUpRight size={13}/></a><a href={BRAND.instagramUrl} target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={13}/></a></div></div>
   <div className="n-footer-connect"><span>FIND NINAUKA / ONLINE & IN PERSON</span><div>{PRIMARY_CHANNELS.map(ch=><a href={ch.url} key={ch.id} target="_blank" rel="noopener noreferrer" title={ch.description}>{ch.name}{ch.mode==='search'?' · cari':''} <ArrowUpRight size={13}/></a>)}</div></div>
   <div className="footer-bottom"><span>© {new Date().getFullYear()} NINAUKA. HAK CIPTA DILINDUNGI.</span><span><A to="/privacy" go={go}>Privasi</A><A to="/terms" go={go}>Ketentuan</A></span><A to="/" go={go}>KEMBALI KE ATAS ↑</A></div>
  </footer>;
 }
 function Home({go}){
  const favorites=[PRODUCTS[0],PRODUCTS[6],PRODUCTS[8],PRODUCTS[2]];
- return <><HeadSEO description="NINAUKA adalah atelier aksesori kulit dan wastra Nusantara di Tangerang Selatan. Jelajahi koleksi, kerajinan, dan cerita di balik karya." />
+ return <><HeadSEO description="NINAUKA adalah rumah kriya Nusantara di Tangerang Selatan. Temukan tenun Baduy, Ulap Doyo, goni, ragam serat alam, kulit, dan cerita usaha." />
  <section className="home-hero">
    <div className="home-hero-photo"><Photo src="/images/story/hero-cover.jpg" alt="Koleksi signature Ninauka dari arsip resmi brand" loading="eager"/></div><div className="home-hero-shade"/>
-   <div className="home-hero-meta"><span>ATELIER KULIT EKSOTIS & WASTRA INDEPENDEN</span><span>BSD CITY · INDONESIA</span></div>
-   <div className="home-hero-title"><Tag>MAISON KRIYA INDONESIA</Tag><h1>Diciptakan untuk<br/><em>dikenang.</em></h1><p>Ekspresi kontemporer dari kulit eksotis pilihan, tenun Nusantara yang hidup, serta tangan-tangan terampil yang menyatukannya.</p><RoundArrow to="/collections" go={go}>Jelajahi koleksi</RoundArrow></div>
+   <div className="home-hero-meta"><span>RUMAH KRIYA NUSANTARA · AKSESORI & SERAT ALAM</span><span>BSD CITY · INDONESIA</span></div>
+   <div className="home-hero-title"><Tag>MAISON KRIYA INDONESIA</Tag><h1>Diciptakan untuk<br/><em>dikenang.</em></h1><p>Ragam material Nusantara—dari tenun Baduy dan Ulap Doyo hingga goni, serat alam, dan kulit—bertemu dalam karya yang dibuat dengan rasa.</p><RoundArrow to="/collections" go={go}>Jelajahi koleksi</RoundArrow></div>
    <div className="home-hero-bottom"><span>01 — KEINDAHAN DALAM SETIAP SILUET</span><span>GULIR UNTUK MENJELAJAH <ChevronDown size={14}/></span><span>DIRANCANG DI INDONESIA</span></div>
  </section>
- <section className="home-intro wrap spacious"><SectionTop index="01 / RUMAH KRIYA" title="SENI KRIYA DENGAN IDENTITAS NUSANTARA"/><div className="home-intro-layout"><h2>Sebuah karya bisa<br/><em>indah.</em><br/>Atau memiliki<br/><em>makna.</em></h2><div><p>Di Ninauka, sebuah tas tidak hanya dibentuk oleh siluetnya. Ada tekstur bahan, ketelitian kriya, dan cerita Nusantara yang ikut berjalan bersamanya.</p><p>Kami mempertemukan kulit berkualitas dengan warisan wastra dalam bahasa desain yang relevan untuk hari ini.</p><LinkArrow to="/maison" go={go}>Tentang Ninauka</LinkArrow></div></div></section>
+ <section className="home-intro wrap spacious"><SectionTop index="01 / RUMAH KRIYA" title="SENI KRIYA DENGAN IDENTITAS NUSANTARA"/><div className="home-intro-layout"><h2>Sebuah karya bisa<br/><em>indah.</em><br/>Atau memiliki<br/><em>makna.</em></h2><div><p>Ninauka berawal dari kegemaran menciptakan hadiah dan suvenir untuk teman, lamaran, pernikahan, serta tamu dari luar negeri. Perhatian pada karya-karya itu kemudian berkembang menjadi pesanan.</p><p>Hari ini, Ninauka mengeksplorasi pandan, lontar, rotan, mendong, agel, batik, tempurung kelapa, manik-manik, wastra, goni, dan kulit menjadi aksesori yang unik.</p><LinkArrow to="/maison" go={go}>Tentang Ninauka</LinkArrow></div></div></section>
  <section className="home-feature"><div className="home-feature-photo"><Photo src="/images/story/curated-exhibition.jpg" alt="Presentasi kurasi koleksi Ninauka"/></div><div className="home-feature-copy"><Tag>KURASI UTAMA</Tag><small>SENI KEANGGUNAN / 2026</small><h2>Wujud dari<br/><em>keanggunan tenang.</em></h2><p>Ekspresi yang tak perlu berteriak. Material berbicara lewat karakter, garis, dan detail.</p><LinkArrow to="/collections" go={go}>Telusuri mahakarya kami</LinkArrow></div></section>
- <section className="wrap home-collection spacious"><SectionTop index="02 / KARYA TERPILIH" title="KOLEKSI UTAMA"/><div className="collection-title-row"><h2>Karya yang<br/><em>kita bawa.</em></h2><div><p>Siluet anggun untuk setiap langkah perjalanan. Kurasi karya pilihan dari katalog resmi Ninauka.</p><LinkArrow to="/collections" go={go}>Lihat seluruh koleksi</LinkArrow></div></div><div className="products-grid featured-grid">{favorites.map((p,i)=><ProductCard p={p} key={p.id} i={i} go={go}/>)}</div></section>
- <section className="home-quote"><span>NINAUKA / SEBUAH FILOSOFI</span><h2>Apa yang kita pilih untuk dibawa<br/>mencerminkan <em>dari mana kita berasal.</em></h2><span>DIBUAT DENGAN KESADARAN BUDAYA</span></section>
- <section className="home-story"><div className="home-story-copy"><Tag>03 / KRIYA & WASTRA</Tag><h2>Tercipta dari<br/><em>banyak cerita.</em></h2><p>Di balik setiap material, ada asal. Di balik setiap tekstur, ada keterampilan. Dari tenun Baduy hingga Ulap Doyo, Ninauka merayakan keragaman material dan tangan pembuatnya.</p><LinkArrow to="/savoir-faire" go={go}>Seni pembuatan kriya</LinkArrow></div><div className="home-story-photo"><Photo src="/images/story/baduy-gedogan-loom.jpg" alt="Dokumentasi proses tenun Baduy"/></div></section>
- <section className="wrap home-journal spacious"><SectionTop index="04 / CATATAN ATELIER" title="KISAH & PERSPEKTIF"/><div className="collection-title-row"><h2>Kisah di balik<br/><em>setiap karya.</em></h2><LinkArrow to="/journal" go={go}>Seluruh jurnal</LinkArrow></div><div className="home-articles">{ARTICLES.slice(0,3).map(a=><ArticleCard a={a} key={a.slug} go={go}/>)}</div></section>
+ <section className="wrap home-collection spacious"><SectionTop index="02 / KARYA TERPILIH" title="KOLEKSI UTAMA"/><div className="collection-title-row"><h2>Karya yang<br/><em>kita bawa.</em></h2><div><p>Jelajahi ragam karya berkode dan arsip produk Ninauka. Rincian material, stok, serta dimensi yang belum tercatat akan dikonfirmasi saat konsultasi.</p><LinkArrow to="/collections" go={go}>Lihat seluruh koleksi</LinkArrow></div></div><div className="products-grid featured-grid">{favorites.map((p,i)=><ProductCard p={p} key={p.id} i={i} go={go}/>)}</div></section>
+ <EditionPreview go={go}/><section className="home-quote"><span>NINAUKA / SEBUAH FILOSOFI</span><h2>Apa yang kita pilih untuk dibawa<br/>mencerminkan <em>dari mana kita berasal.</em></h2><span>DIBUAT DENGAN KESADARAN BUDAYA</span></section>
+ <BrandOrigins go={go} short/><section className="home-story"><div className="home-story-copy"><Tag>03 / KRIYA & WASTRA</Tag><h2>Tercipta dari<br/><em>banyak cerita.</em></h2><p>Di balik setiap material, ada asal. Di balik setiap tekstur, ada keterampilan. Dari tenun Baduy hingga Ulap Doyo, Ninauka merayakan keragaman material dan tangan pembuatnya.</p><LinkArrow to="/savoir-faire" go={go}>Seni pembuatan kriya</LinkArrow></div><div className="home-story-photo"><Photo src="/images/story/baduy-gedogan-loom.jpg" alt="Dokumentasi proses tenun Baduy"/></div></section>
+ <MaterialPanorama go={go}/><section className="wrap home-journal spacious"><SectionTop index="04 / CATATAN ATELIER" title="KISAH & PERSPEKTIF"/><div className="collection-title-row"><h2>Kisah di balik<br/><em>setiap karya.</em></h2><LinkArrow to="/journal" go={go}>Seluruh jurnal</LinkArrow></div><div className="home-articles">{ARTICLES.slice(0,3).map(a=><ArticleCard a={a} key={a.slug} go={go}/>)}</div></section>
  <section className="home-bespoke"><div className="home-bespoke-photo"><Photo src="/images/story/exclusive-luxury-packaging.jpg" alt="Kemasan personal Ninauka"/></div><div className="home-bespoke-copy"><Tag>05 / SENTUHAN PERSONAL</Tag><h2>Dirancang penuh<br/><em>perhatian.</em></h2><p>Hadiah korporasi, kesempatan istimewa, atau karya personal. Mulailah dengan percakapan bersama atelier.</p><RoundArrow to="/bespoke" go={go}>Layanan pesanan khusus</RoundArrow></div></section>
  </>;
 }
@@ -142,19 +144,19 @@ function Collections({go}){
  return <><HeadSEO title="Koleksi" description="Temukan katalog lengkap Ninauka: tas kulit piton, tenun Baduy, Ulap Doyo, dan karya goni. Lihat spesifikasi dan konsultasikan pesanan."/>
  <PageHero index="01" kicker="KOLEKSI UTAMA" title="Karya penuh" em="makna." lead="Tiap siluet memiliki karakter. Jelajahi karya yang mempertemukan desain kontemporer dengan ekspresi material Nusantara." image="/brand/ninauka-bestseller-2026.jpg"/>
  <CollectionMaterials select={category=>{setFilter(category);setSearch('');document.getElementById('collection-grid')?.scrollIntoView({behavior:'smooth',block:'start'});}}/>
- <section className="wrap listing-section" id="collection-grid"><SectionTop index="KATALOG KARYA" title={`${PRODUCTS.length} KARYA KURASI`}/><div className="catalog-toolbar"><div className="filter-list" aria-label="Filter koleksi">{CATEGORIES.map(c=><button type="button" key={c.id} onClick={()=>setFilter(c.id)} aria-pressed={filter===c.id} className={filter===c.id?'filter-on':''}>{c.label}</button>)}</div><label className="catalog-search"><Search size={17}/><input aria-label="Cari koleksi" placeholder="Cari karya / material" value={search} onChange={e=>setSearch(e.target.value)}/></label></div>
+ <section className="wrap listing-section" id="collection-grid"><SectionTop index="KATALOG KARYA" title={`${PRODUCTS.length} REFERENSI KARYA`}/><div className="catalog-toolbar"><div className="filter-list" aria-label="Filter koleksi">{CATEGORIES.map(c=><button type="button" key={c.id} onClick={()=>setFilter(c.id)} aria-pressed={filter===c.id} className={filter===c.id?'filter-on':''}>{c.label}</button>)}</div><label className="catalog-search"><Search size={17}/><input aria-label="Cari koleksi" placeholder="Cari karya / material" value={search} onChange={e=>setSearch(e.target.value)}/></label></div>
  <p className="catalog-counter">MENAMPILKAN {selected.length} KARYA <span>Harga dan ketersediaan dikonfirmasi oleh atelier.</span></p>
  {selected.length?<div className="products-grid listing-grid">{selected.map((p,i)=><ProductCard key={p.id} p={p} i={i} go={go}/>)}</div>:<div className="empty-results"><h2>Belum ada karya yang cocok.</h2><p>Coba kata kunci atau kategori lain.</p><button onClick={()=>{setFilter('all');setSearch('')}}>Atur ulang pencarian <ArrowRight size={16}/></button></div>}
- </section></>;
+ </section><EditionPreview go={go}/></>;
 }
 function ProductDetail({go,product}){
  const [active,setActive]=useState(0);useEffect(()=>setActive(0),[product?.id]);
  if(!product)return <NotFound go={go}/>;
  const gallery=(product.gallery?.length?product.gallery:[product.image]);const more=PRODUCTS.filter(p=>p.id!==product.id&&p.category===product.category).slice(0,3);if(more.length<3)more.push(...PRODUCTS.filter(p=>p.id!==product.id&&!more.includes(p)).slice(0,3-more.length));
  return <><HeadSEO title={product.title} description={product.description} image={product.image} product/>
- <section className="product-detail wrap"><div className="breadcrumb"><A to="/collections" go={go}>Koleksi</A><span>/</span><span>{product.code}</span></div><div className="product-detail-layout">
+ <section className="product-detail wrap"><div className="breadcrumb"><A to="/collections" go={go}>Koleksi</A><span>/</span><span>{product.code || 'ARSIP NINAUKA'}</span></div><div className="product-detail-layout">
  <div className="product-gallery"><div className="product-gallery-main"><Photo src={gallery[active]} alt={`${product.title}, sudut ${active+1}`} loading="eager" contain/></div><div className="thumbs" aria-label="Galeri foto produk">{gallery.map((source,i)=><button key={source} className={i===active?'thumb-active':''} aria-label={`Tampilkan foto ${i+1}`} aria-pressed={i===active} onClick={()=>setActive(i)}><Photo src={source} alt="" contain/></button>)}</div></div>
- <div className="product-summary"><Tag>{product.categoryLabel} / {product.code}</Tag><h1>{product.title}</h1><p className="product-badge">{product.badge}</p><p className="product-description">{product.description}</p><div className="spec-list"><div><span>UKURAN</span><strong>{product.dimensions}</strong></div><div><span>MATERIAL</span><strong>{product.materials}</strong></div><div><span>KETERSEDIAAN</span><strong>Konfirmasi stok dan waktu produksi dengan atelier</strong></div></div><a className="primary-dark" target="_blank" rel="noreferrer" href={inquiries(`${product.title} (${product.code})`)}>Konsultasikan karya ini <ArrowUpRight size={19}/></a><p className="detail-fineprint">Spesifikasi dapat dikonfirmasi ulang saat konsultasi. Tidak ada transaksi pembayaran langsung di website.</p></div>
+ <div className="product-summary"><Tag>{product.categoryLabel} / {product.code || 'KOLEKSI ARSIP'}</Tag><h1>{product.title}</h1><p className="product-badge">{product.badge}</p><p className="product-description">{product.description}</p><div className="spec-list"><div><span>UKURAN</span><strong>{product.dimensions || 'Konfirmasi ke atelier'}</strong></div><div><span>MATERIAL</span><strong>{product.materials || 'Konfirmasi ke atelier'}</strong></div><div><span>KETERSEDIAAN</span><strong>Konfirmasi stok dan waktu produksi dengan atelier</strong></div></div><a className="primary-dark" target="_blank" rel="noreferrer" href={inquiries(`${product.title}${product.code ? ' ('+product.code+')' : ' (referensi foto)'}`)}>Konsultasikan karya ini <ArrowUpRight size={19}/></a><p className="detail-fineprint">Spesifikasi dapat dikonfirmasi ulang saat konsultasi. Tidak ada transaksi pembayaran langsung di website.</p></div>
  </div></section>
  <ProductDossier product={product} go={go}/>
  <section className="wrap related-products spacious"><SectionTop index="KURASI TERKAIT" title="PILIHAN NINAUKA"/><h2>Ekspresi <em>lainnya.</em></h2><div className="products-grid three-grid">{more.map((p,i)=><ProductCard key={p.id} i={i} p={p} go={go}/>)}</div></section></>;
@@ -164,14 +166,14 @@ function Maison({go}){
  <PageHero index="02" kicker="RUMAH KRIYA KAMI" title="Tidak sekadar dibuat." em="Dibuat dengan makna." lead="Atelier independen yang memaknai kriya lewat keterampilan, asal material, dan hubungan personal dengan setiap karya." image="/images/story/atelier-bsd-city.jpg"/>
  <section className="wrap maison-body spacious"><SectionTop index="01 / PERSPEKTIF KAMI" title="KISAH TENTANG KETELITIAN"/><div className="maison-body-grid"><h2>Keindahan lahir dari<br/><em>pemahaman.</em></h2><div><p>Ninauka bergerak di antara dua dunia: estetika aksesori kontemporer dan kekayaan kriya Nusantara. Di sini, tas dipahami sebagai objek yang punya fungsi sekaligus identitas.</p><p>Material tenun tidak ditempatkan sekadar menjadi motif. Tekstur, proses pembuatan, dan asal-usulnya menjadi pertimbangan yang ikut membentuk pilihan desain.</p><p>Berbasis di kawasan Nusaloka, BSD City, Tangerang Selatan, atelier ini mempertemukan aneka material untuk menciptakan karya yang terasa personal.</p></div></div></section>
  <section className="maison-founder"><div className="founder-visual"><Photo src="/images/story/atelier-craftsman.jpg" alt="Dokumentasi kegiatan atelier Ninauka"/></div><div className="founder-copy"><Tag>PENDIRI ATELIER</Tag><h2>Sebuah visi yang<br/><em>terus dilanjutkan.</em></h2><p className="founder-name">{BRAND.founder}</p><span>{BRAND.founderTitle}</span><p>Sebuah visi yang memberikan ruang bagi desain modern untuk berdialog dengan seni kriya dan warisan tekstil Indonesia.</p><p className="founder-note">*Foto menampilkan dokumentasi atelier, bukan potret identitas pendiri.</p></div></section>
- <MaisonInterlude go={go}/>
+ <BrandOrigins go={go}/><VisionMission/><MaisonInterlude go={go}/>
  <section className="wrap maison-values spacious"><SectionTop index="02 / NILAI UTAMA" title="PRINSIP KRIYA KAMI"/><div className="value-grid"><div><span>01</span><h3>Karakter Material.</h3><p>Karakter bahan dihargai; setiap tekstur dipilih untuk menghidupkan bentuk.</p></div><div><span>02</span><h3>Kriya Menyimpan Sejarah.</h3><p>Wastra Nusantara dibicarakan bersama asal dan pengetahuan pembuatnya.</p></div><div><span>03</span><h3>Kemewahan Personal.</h3><p>Kemewahan datang dari hubungan dan kecermatan, bukan sekadar label.</p></div></div><LinkArrow to="/savoir-faire" go={go}>Jelajahi proses kriya</LinkArrow></section></>;
 }
 function SavoirFaire({go}){
  return <><HeadSEO title="Kriya & Wastra" description="Material dan proses kriya Ninauka: tenun Baduy, Ulap Doyo Kalimantan, kulit, dan kemasan personal."/>
  <PageHero index="03" kicker="KRIYA & WASTRA" title="Tangan di balik" em="setiap bentuk." lead="Kerajinan yang baik meninggalkan jejak: pada detail, tekstur, dan cara sebuah benda bertahan untuk dipakai." image="/images/story/atelier-craftsman.jpg" dark/>
  <section className="wrap craft-opening spacious"><SectionTop index="DOSSIER MATERIAL" title="DARI ASAL MENUJU MAHAKARYA"/><h2>Setiap material<br/>memiliki <em>awal cerita.</em></h2><p>Sebuah pandangan editorial tentang material pilihan Ninauka, dari tekstil tradisional hingga teknik kriya aksesori.</p></section>
- <CraftIndex/>
+ <CraftIndex/><MaterialPanorama go={go}/>
  {CRAFTSMANSHIP_CHAPTERS.map((c,i)=><section id={'material-'+c.id} key={c.id} className={'craft-chapter '+(i%2?'chapter-reverse':'')}><div className="chapter-image"><Photo src={c.image} alt={c.title}/><span>BAB {c.number} / NINAUKA</span></div><div className="chapter-copy"><Tag>BAB {c.number} / KRIYA & BUDAYA</Tag><h2>{c.title}</h2><strong>{c.subtitle}</strong><p>{c.body}</p>{i<2?<LinkArrow to={'/journal/'+(i===0?'ulap-doyo-dari-kalimantan':'tenun-gedogan-baduy')} go={go}>Baca cerita material</LinkArrow>:<LinkArrow to="/contact" go={go}>Tanyakan detail material</LinkArrow>}</div></section>)}
  <section className="compliance-note wrap"><h2>Material. Transparansi. <em>Tanggung Jawab.</em></h2><p>Produk dengan material yang diatur perundangan memerlukan pemeriksaan asal material dan dokumen yang relevan. Persyaratan CITES untuk pengiriman lintas negara bergantung pada spesies, transaksi, dan negara tujuan; dokumen dikonfirmasi per pesanan, bukan dijamin secara umum oleh halaman ini.</p><LinkArrow to="/journal/cites-dan-dokumen-kulit-eksotis" go={go}>Pahami dokumen perdagangan</LinkArrow></section></>;
 }
@@ -197,7 +199,7 @@ function Bespoke({go}){
  <PageHero index="05" kicker="PESANAN KHUSUS & HADIAH VIP" title="Sebuah persembahan" em="personal." lead="Untuk hadiah yang tak sekadar diberikan, tetapi dipilih dengan pemikiran—dari satu karya istimewa hingga kurasi acara." image="/images/story/exclusive-luxury-packaging.jpg"/>
  <section className="wrap bespoke-intro spacious"><SectionTop index="LAYANAN ATELIER" title="DIRANCANG SECARA PERSONAL"/><div className="maison-body-grid"><h2>Bentuk hadiah<br/><em>yang berbeda.</em></h2><div><p>Setiap kesempatan memiliki konteks dan penerima yang berbeda. Kami memulai konsultasi dari kebutuhan Anda—bukan memaksakan satu format paket untuk semua.</p><p>Kurasi dapat mempertimbangkan material, kategori karya, presentasi kemasan, dan kemungkinan personalisasi. Setiap detail akan ditinjau bersama atelier sebelum konfirmasi.</p><LinkArrow to="/contact" go={go}>Mulai konsultasi privat</LinkArrow></div></div></section>
  <section className="bespoke-process wrap"><SectionTop index="TAHAPAN KERJA" title="DARI GAGASAN MENUJU KARYA"/><div className="process-grid">{[['01','Percakapan Awal','Ceritakan penerima, kesempatan, kisaran jumlah, dan tenggat.'],['02','Kurasi Karya','Atelier mengusulkan pilihan karya, spesifikasi, dan kemasan yang sesuai.'],['03','Detail & Penyesuaian','Personalisasi, jumlah, penawaran, dan waktu disepakati sebelum proses.'],['04','Presentasi Akhir','Pengemasan dan pengiriman diatur sesuai kesepakatan.']].map(x=><div key={x[0]}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></div>)}</div></section>
- <BespokeCurations/>
+ <BespokeCurations/><PackagingReality go={go}/>
  <div className="bespoke-showcase"><Photo src="/brand/ninauka-exclusive-packaging.jpg" alt="Presentasi kemasan Ninauka"/><div><Tag>DETAIL YANG BERMAKNA</Tag><h2>Dibuat dengan<br/><em>ketulusan penuh.</em></h2><p>Konsultasikan pilihan kemasan, kartu cerita, dan detail personal sesuai produk dan acara.</p><a className="light-link" target="_blank" rel="noreferrer" href={inquiries('bespoke gifting dan pesanan korporasi')}>Bicara dengan atelier <ArrowUpRight size={19}/></a></div></div>
  <section className="wrap faq-block spacious"><SectionTop index="TANYA JAWAB" title="INFORMASI PENTING"/><h2>Pertanyaan <em>umum.</em></h2><div className="faq-list">{faqs.map((q,i)=><div className="faq-item" key={q.q}><button aria-expanded={open===i} onClick={()=>setOpen(open===i?-1:i)}><span>{String(i+1).padStart(2,'0')}</span><strong>{q.q}</strong>{open===i?<Minus size={20}/>:<Plus size={20}/>}</button>{open===i&&<p>{q.a}</p>}</div>)}</div></section></>;
 }
@@ -216,6 +218,7 @@ export default function App(){
  const {path,go}=useRoute();let page;
  if(path==='/')page=<Home go={go}/>;
  else if(path==='/collections')page=<Collections go={go}/>;
+  else if(path==='/edisi-2026')page=<><HeadSEO title="Edisi 2026 — Produk Baru & Pilihan" description="Dokumentasi produk baru dan best seller 2026 dari company profile Ninauka, tanpa membuat kode produk atau klaim stok yang tidak tercantum."/><Edition2026 go={go}/></>;
  else if(path.startsWith('/pieces/'))page=<ProductDetail go={go} product={PRODUCTS.find(p=>p.id===path.split('/')[2])}/>;
  else if(path==='/maison')page=<Maison go={go}/>;
  else if(path==='/savoir-faire')page=<SavoirFaire go={go}/>;

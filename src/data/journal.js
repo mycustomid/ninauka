@@ -131,3 +131,30 @@ export const ARTICLES = [
     relatedProduct:'kc-02'
   }
 ];
+
+
+/** Added V4: Editorial retellings of Ninauka's 2026 company profile, pages 2–5. */
+ARTICLES.push({
+ slug:'dari-hobi-menjadi-ninauka',category:'MAISON / 06',title:'Berawal dari Hadiah, Bertumbuh Menjadi Ninauka',
+ subtitle:'Tentang kegemaran berkarya, pertemanan, dan pesanan yang mulai berdatangan.',
+ excerpt:'Ninauka memulai perjalanan dari karya yang dibuat untuk teman. Kisah sederhana yang kemudian membuka jalan bagi beragam produk kreatif.',
+ image:'/images/story/atelier-bsd-city.jpg',secondary:'/images/story/curated-exhibition.jpg',
+ imageAlt:'Dokumentasi kegiatan Ninauka',readTime:'4 menit',relatedProduct:'tb-tote',
+ sections:[
+  {heading:'Mulanya, untuk diberikan',paragraphs:['Dalam company profile Ninauka, kisah usaha ini dimulai dari kegemaran membuat karya seni. Karya tersebut diberikan kepada teman sebagai hadiah dan suvenir, termasuk untuk lamaran, pernikahan, serta tamu dari luar negeri.','Seiring berjalannya waktu, karya-karya itu menarik perhatian dan menghadirkan pesanan. Cerita asal-usul ini menjelaskan mengapa konsep hadiah personal tetap relevan dalam arah bisnis Ninauka.']},
+  {heading:'Banyak bahan, banyak kemungkinan',paragraphs:['Ninauka menggunakan beragam bahan olahan Nusantara: pandan, lontar, rotan, mendong, agel, batik, tempurung kelapa, manik-manik, dan lainnya. Kemudian berbagai kelompok produk juga menampilkan tenun Baduy, serat Ulap Doyo, goni, dan kulit.','Ragam bahan tersebut berarti identitas rumah kriya tidak sebaiknya dipersempit menjadi satu material atau satu model tas saja.']},
+  {heading:'Kreativitas dan keterampilan',paragraphs:['Visi Ninauka yang tercatat pada halaman 3 mencakup kreasi ramah lingkungan, daya saing melalui inovasi, dan pengenalan yang lebih luas di Indonesia serta internasional.','Misinya menekankan mutu produk, kepuasan pelanggan, serta peningkatan sumber daya manusia, khususnya ibu rumah tangga. Halaman ini tidak mengklaim jumlah perajin atau dampak sosial tertentu yang belum ada dalam dokumen.']}
+ ]
+});
+ARTICLES.push({
+ slug:'pilihan-koleksi-ninauka-2026',category:'KOLEKSI / 07',title:'Membaca Pilihan Produk Ninauka 2026',
+ subtitle:'Dua halaman katalog yang memperlihatkan arah visual dan ragam karya Ninauka.',
+ excerpt:'Di antara produk baru dan yang disebut best seller pada katalog 2026, kita melihat perluasan bentuk dan material.',
+ image:'/images/editorial-2026/new-products-montage.webp',secondary:'/images/editorial-2026/bestseller-mixed-tote.webp',
+ imageAlt:'Kolase produk baru Ninauka 2026 dari company profile',readTime:'3 menit',relatedProduct:'ga-02',
+ sections:[
+  {heading:'Produk baru',paragraphs:['Company profile terbaru menempatkan sejumlah foto karya pada kelompok New Products di halaman 4. Terlihat variasi bentuk dan pemakaian tekstil serta material aksesori.','Sebagian foto tidak disertai kode model, ukuran, harga, atau informasi stok. Karena itu, pembaca perlu mengonfirmasi detail model kepada Ninauka sebelum memesan.']},
+  {heading:'Pilihan 2026',paragraphs:['Halaman 5 menampilkan kelompok Best Seller produk 2026, mulai dari berbagai tote hingga produk aksesori lain dengan warna dan tekstur yang berbeda.','Sebutan best seller diambil dari katalog Ninauka sendiri. Tanpa laporan penjualan, kami tidak menambahkan klaim peringkat, volume, atau pertumbuhan penjualan.']},
+  {heading:'Membuka percakapan',paragraphs:['Katalog visual menjadi awal yang baik untuk eksplorasi. Pengunjung dapat menunjukkan foto yang diminati saat berkonsultasi mengenai ketersediaan, pilihan bahan, serta proses pemesanan.','Halaman Edisi 2026 mengumpulkan foto asli dari dokumen Ninauka agar proses itu lebih mudah.']}
+ ]
+});
