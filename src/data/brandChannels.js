@@ -12,7 +12,7 @@ export const CHANNELS = [
  {id:'shopee',name:'Shopee',handle:'NINAUKA · katalog produk',url:'https://shopee.co.id/Ninauka-Imut-Bag-i.140193665.29674690557',mode:'listing',label:'Buka produk Ninauka di Shopee',description:'Tautan produk Ninauka ditemukan; bukan klaim bahwa seluruh katalog tersedia.'},
  {id:'tokopedia',name:'Tokopedia',handle:'Pencarian toko “ninauka”',url:'https://www.tokopedia.com/search?st=shop&q=ninauka',mode:'search',label:'Cari Ninauka di Tokopedia',description:'Nama toko tercantum di katalog; URL toko langsung belum dapat diverifikasi.'},
  {id:'maps',name:'Google Maps',handle:'Nusaloka · BSD City',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(address),mode:'search',label:'Temukan alamat di Google Maps',description:'Pencarian berdasarkan alamat katalog. Konfirmasi janji kunjungan dahulu.'},
- {id:'catalogue',name:'Direktori Brand',handle:'BRILiaNpreneur 2025',url:'https://storage.googleapis.com/brilianpreneur2023-storage/bp25-prod-assets/catalogue/BP25_CATALOGUE_ACCESSORIES%20BEAUTY_270125.pdf#page=116',mode:'source',label:'Lihat katalog brand publik',description:'Rujukan profil brand, narasi, dan informasi kanal yang dipublikasikan.'},
+ {id:'catalogue',name:'Brand directory',handle:'BRILiaNpreneur 2025',url:'https://storage.googleapis.com/brilianpreneur2023-storage/bp25-prod-assets/catalogue/BP25_CATALOGUE_ACCESSORIES%20BEAUTY_270125.pdf#page=116',mode:'source',label:'Lihat katalog brand publik',description:'Rujukan profil brand, narasi, dan informasi kanal yang dipublikasikan.'},
 ];
 export const PRIMARY_CHANNELS=CHANNELS.filter(c=>c.id!=='catalogue');
 export const PUBLIC_SAME_AS=CHANNELS.filter(c=>c.mode==='direct').map(c=>c.url);
